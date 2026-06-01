@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            Patient Details
+        </div>
+
+        <div class="card-body">
+
+            <h4>{{ patient.full_name }}</h4>
+
+            <hr>
+
+            <p><strong>DOB:</strong> {{ patient.dob }}</p>
+
+            <p><strong>Email:</strong> {{ patient.email }}</p>
+
+            <p><strong>Glucose:</strong> {{ patient.glucose }}</p>
+
+            <p><strong>Haemoglobin:</strong> {{ patient.haemoglobin }}</p>
+
+            <p><strong>Cholesterol:</strong> {{ patient.cholesterol }}</p>
+
+            <p><strong>Risk Level:</strong> {{ patient.risk_level }}</p>
+
+            <p><strong>Remarks:</strong> {{ patient.remarks }}</p>
+
+            <a href="{{ url_for('patients') }}"
+               class="btn btn-secondary">
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

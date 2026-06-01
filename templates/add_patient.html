@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+
+    <div class="card-header bg-primary text-white">
+        Add New Patient
+    </div>
+
+    <div class="card-body">
+
+        <form method="POST">
+
+            <div class="mb-3">
+                <label>Full Name</label>
+                <input type="text"
+                       name="full_name"
+                       class="form-control"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label>Date of Birth</label>
+                <input type="date"
+                       name="dob"
+                       class="form-control"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label>Email Address</label>
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label>Glucose Level</label>
+                <input type="number"
+                       step="0.1"
+                       name="glucose"
+                       class="form-control"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label>Haemoglobin Level</label>
+                <input type="number"
+                       step="0.1"
+                       name="haemoglobin"
+                       class="form-control"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label>Cholesterol Level</label>
+                <input type="number"
+                       step="0.1"
+                       name="cholesterol"
+                       class="form-control"
+                       required>
+            </div>
+
+            <button type="submit"
+                    class="btn btn-success">
+                Predict & Save Patient
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
