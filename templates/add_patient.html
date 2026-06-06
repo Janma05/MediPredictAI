@@ -25,6 +25,7 @@
                 <input type="date"
                        name="dob"
                        class="form-control"
+                       max="{{ today }}"
                        required>
             </div>
 
@@ -33,13 +34,19 @@
                 <input type="email"
                        name="email"
                        class="form-control"
+                       placeholder="example@gmail.com"
+                       pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                        required>
+                <small class="text-muted">
+                    Enter a valid email address.
+                </small>
             </div>
 
             <div class="mb-3">
                 <label>Glucose Level</label>
                 <input type="number"
                        step="0.1"
+                       min="0"
                        name="glucose"
                        class="form-control"
                        required>
@@ -49,6 +56,7 @@
                 <label>Haemoglobin Level</label>
                 <input type="number"
                        step="0.1"
+                       min="0"
                        name="haemoglobin"
                        class="form-control"
                        required>
@@ -58,6 +66,7 @@
                 <label>Cholesterol Level</label>
                 <input type="number"
                        step="0.1"
+                       min="0"
                        name="cholesterol"
                        class="form-control"
                        required>

@@ -222,7 +222,18 @@ def add_patient():
         if not validate_email(email):
             flash("Invalid Email Address", "danger")
             return redirect(url_for("add_patient"))
-
+        conn = get_db_connection()
+        existing_patient = conn.execute(
+            "SELECT * FROM patients WHERE email = ?",
+            (email,)
+        ).fetchone()
+        conn.close()
+        if existing_patient:
+            flash(
+                "Patient with this email already exists",
+                "danger"
+            )
+            return redirect(url_for("add_patient"))
         if datetime.strptime(dob, "%Y-%m-%d").date() > datetime.today().date():
             flash("Date of Birth cannot be in the future", "danger")
             return redirect(url_for("add_patient"))
